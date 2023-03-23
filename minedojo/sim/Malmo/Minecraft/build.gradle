@@ -22,7 +22,7 @@ buildscript {
             exclude group: 'org.ow2.asm', module: 'asm-debug-all'
         }
 
-        classpath 'com.github.brandonhoughton:ForgeGradle:FG_2.2_patched-SNAPSHOT'
+        classpath 'com.github.MineDojo:ForgeGradle:FG_2.2_patched-SNAPSHOT'
     }
     configurations {
         compileClasspath {
@@ -42,7 +42,7 @@ plugins {
 }
 
 dependencies {
-    implementation 'com.github.brandonhoughton:forgegradle:FG_2.2_patched-SNAPSHOT'
+    implementation 'com.github.MineDojo:ForgeGradle:FG_2.2_patched-SNAPSHOT'
 }
 
 apply plugin: 'net.minecraftforge.gradle.forge'
@@ -306,7 +306,7 @@ task jaxb() {
     description 'Generate source files for our XML schemas using JAXB'
 
     // Create an index file listing all the schemas:
-    def schemaIndexFile = new File('src/main/resources/schemas.index')
+    def schemaIndexFile = new File("$projectDir/src/main/resources/schemas.index")
     def contents = ""
     def tree = copySchemas.source
     tree.visit { fileDetails ->
